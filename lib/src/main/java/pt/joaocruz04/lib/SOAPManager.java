@@ -121,6 +121,8 @@ public class SOAPManager {
                                 Log.e(TAG, "The " + methodName + " webservice returns a primitive object, but you didn't specify a valid primitive output class.");
                                 callback.onError(JsoapError.OTHER_ERROR);
                             }
+                        } else if (reslt instanceof String) {
+                            return reslt;
                         } else {
                             callback.onError(JsoapError.OTHER_ERROR);
                             return null;
